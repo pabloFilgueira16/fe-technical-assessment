@@ -1,9 +1,7 @@
+import WorkFlowDashboard from "./feature/workflows/dashboard";
+
 function App() {
-  return (
-    <div className="text-lg">
-      Technical assessment
-    </div>
-  )
+  return <WorkFlowDashboard />;
 }
 
-export default App
+export default App;
