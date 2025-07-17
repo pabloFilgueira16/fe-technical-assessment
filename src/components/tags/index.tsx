@@ -15,7 +15,7 @@ const ColorSquare: React.FC<{ color: string }> = ({ color }) => (
 
 const Colors: React.FC<{ colors: string[] }> = ({ colors }) => {
   return (
-    <span className="flex gap-1">
+    <span className="flex justify-between max-w-[24px] gap-1">
       {colors.map((color, idx) => (
         <ColorSquare key={idx} color={color} />
       ))}
@@ -35,7 +35,7 @@ const Tags: React.FC<FontProps> = ({ tags }) => {
     return (
       <div className="inline-flex items-center px-2 py-1 border border-border-primary rounded-full gap-2 bg-white">
         <Colors colors={colors} />
-        <Body variant="sm" styleType="semi-bold">
+        <Body className="whitespace-nowrap" variant="sm" styleType="semi-bold">
           {tags.length > 1 ? `${tags.length} tags` : tags[0].name}
         </Body>
       </div>
