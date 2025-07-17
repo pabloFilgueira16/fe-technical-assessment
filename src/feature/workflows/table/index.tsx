@@ -1,21 +1,14 @@
 import AirOps from "@airops/airops-js";
-import dayjs from "dayjs";
-import RelativeTime from "dayjs/plugin/relativeTime";
 import { useMemo } from "react";
 import Body from "../../../components/body";
 import useExecute from "../../../services/airops/use-execute";
-import type { Workflow } from "../../../types/workflow";
 import WorkFlowRow from "./row";
 import WorkFlowRowLoading from "./row/loading";
-dayjs.extend(RelativeTime);
 
-interface WorkFlowTableProps {
-  workflows: Workflow[];
-}
 
 const titleClasses = "small-title-bold px-2 py-4 text-left whitespace-nowrap";
 
-const WorkFlowTable: React.FC<WorkFlowTableProps> = () => {
+const WorkFlowTable: React.FC = () => {
   const airOpsInstance = useMemo(() => {
     return new AirOps();
   }, []);
@@ -52,7 +45,7 @@ const WorkFlowTable: React.FC<WorkFlowTableProps> = () => {
   }
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto px-4">
       <table className="min-w-full border-spacing-0 border-collapse w-full">
         <thead>
           <tr className="border-b border-border-primary">

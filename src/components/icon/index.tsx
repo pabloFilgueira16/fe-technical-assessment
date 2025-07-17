@@ -1,6 +1,5 @@
-import React from 'react';
-import * as Icons from 'react-icons/fa';
-import { CSSProperties } from 'react';
+import React, { CSSProperties } from "react";
+import * as Icons from "react-icons/fa";
 export type IconName = keyof typeof IconMaps;
 export type IconSize = keyof typeof sizeMap;
 
@@ -18,6 +17,8 @@ const IconMaps = {
   trash: <Icons.FaTrash />,
   edit: <Icons.FaPen />,
   caretDown: <Icons.FaCaretDown />,
+  chevronLeft: <Icons.FaChevronLeft />,
+  chevronRight: <Icons.FaChevronRight />,
 };
 
 const sizeMap = {
@@ -25,7 +26,12 @@ const sizeMap = {
   s: 18,
   m: 25,
 };
-const Icon = ({ name, size = 'xs', color = '#A1A1A1', ...props }: IconProps) => {
+const Icon = ({
+  name,
+  size = "xs",
+  color = "#A1A1A1",
+  ...props
+}: IconProps) => {
   const iconSize = `${sizeMap[size]}`;
   const IconComponent = IconMaps[name];
 
