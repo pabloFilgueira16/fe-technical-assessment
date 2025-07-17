@@ -3,6 +3,7 @@ import RelativeTime from "dayjs/plugin/relativeTime";
 import Body from "../../../../components/body";
 import Tags from "../../../../components/tags";
 import type { Workflow } from "../../../../types/workflow";
+import Button from "../../../../components/button";
 dayjs.extend(RelativeTime);
 
 interface RowProps {
@@ -43,7 +44,18 @@ const WorkFlowRow: React.FC<RowProps> = ({ workflow }) => (
       </Body>
     </td>
     <td className="px-4 py-[22px] text-left">
-      <button className="text-blue-600 hover:underline">Edit</button>
+      <span className="flex items-center gap-2">
+        <Button
+          variant="icon"
+          iconName="edit"
+          onClick={() => alert("not implemented yet")}
+        />
+        <Button
+          variant="icon"
+          iconName="trash"
+          onClick={() => alert("not implemented yet")}
+        />
+      </span>
     </td>
   </tr>
 );
